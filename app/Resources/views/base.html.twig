@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Projection by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>{% block title %}Okehampton Taxi, Airport Transfers, Contract Hire, Exeter Taxi | {{ company }}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Okehampton Taxis, Airport Transfers, Contract Hire. {$company} was founded by Graham to provide people with an affordable and reliable Taxi service." />
+    <meta name="keywords" content="okehampton taxis, okehampton taxi, taxis in okehampton, exeter taxis, exeter taxi, airport transfer taxi, contract hire, taxis in exeter, devon taxi, taxis in devon, local taxi in exeter, local taxi in okehampton, contract hire devon, okehampton contract hire, okehampton" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Styles -->
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datetimepicker.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    {% endblock %}
+
+</head>
+<body class="{{ page }}">
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="{{ path('homepage') }}" class="logo"><strong>{{ company }}</strong></a>
+            <nav id="nav">
+                <a href="{{ path('homepage') }}">Home</a>
+                <a href="{{ path('book_step_one') }}">Book</a>
+                <a href="https://www.facebook.com/atmtaxis/" target="_blank" class="icon fa-facebook"> Facebook</a>
+                <a href="https://twitter.com/atm_taxis" target="_blank" class="icon fa-twitter"> Twitter</a>
+                <a href="#contactForm" class="icon fa-envelope-o"> Email</a>
+            </nav>
+            <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        </div>
+    </header>
+
+{% block body %}{% endblock %}
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+
+            <h3>Get in touch</h3>
+
+            <form id="contactForm" autocomplete="off">
+
+                <div id="sentMessage" class="box" style="display:none;">
+                    <h3>Email Sent!</h3>
+                    <p>Thank you for your email. We will do our best to get back to you soon.</p>
+                </div>
+                <div id="errorMessage" class="box" style="background: #ffb6b6;display:none;">
+                    <h3>Sorry Message not sent</h3>
+                    <p style="font-size: 19px;">Sorry you have some errors in your form. Please make sure all fields are filled in and correct.</p>
+                </div>
+
+                <div class="field half first">
+                    <label for="name">Name</label>
+                    <input name="name" id="name" type="text" placeholder="Name">
+                </div>
+                <div class="field half">
+                    <label for="email">Email</label>
+                    <input name="email" id="email" type="email" placeholder="Email">
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+                    <input name="phone" id="phone" type="text" style="position:relative;left: -6000px;" />
+                </div>
+                <ul class="actions">
+                    <li><input type="button" value="Send Message" class="button alt" id="send" onclick="sendEmail()"></li>
+                </ul>
+            </form>
+
+            <div class="copyright">
+                <div itemscope="" itemtype="http://schema.org/LocalBusiness">
+                    &copy; <?php date("Y"); ?> <span itemprop="name">{{ company }}</span>
+                    <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                        ADDRESS:
+                        <span itemprop="streetAddress">18 Limehayes Road</span>,
+                        <span itemprop="addressLocality">Okehampton</span>,
+                        <span itemprop="addressRegion">Devon</span>,
+                        <span itemprop="postalCode">EX20 1NX</span>,
+                        <span itemprop="addressCountry">GB</span> |
+                        TEL: <span itemprop="telephone">07934334255</span> |
+                        EMAIL: <a href="mailto:info@hobo-web.co.uk" itemprop="email">info@atmtaxi.co.uk</a>.
+                    </div>
+
+                    <span itemprop="geo" itemscope="" itemtype="http://schema.org/GeoCoordinates">
+								  <meta itemprop="latitude" content="50.7417">
+								  <meta itemprop="longitude" content="-3.9925">
+							</span>
+                </div>
+                Design: <a href="https://templated.co">TEMPLATED</a> | <a href="http://christophermwest.co.uk">Christopher West</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    {% block javascripts %}
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/skel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/util.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+        <script src="{{ asset('assets/js/moment.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap-datetimepicker.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bookstep1.js') }}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtWjsRz-T8qgXc1b2IOztQsTfAmxtoR38&libraries=places&callback=initAutocomplete" async defer></script>
+    {% endblock %}
+
+</body>
+</html>

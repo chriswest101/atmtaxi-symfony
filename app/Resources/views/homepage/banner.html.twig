@@ -1,0 +1,28 @@
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <header>
+            <h3>{{ company }}</h3>
+        </header>
+
+        <div class="flex ">
+
+            <div>
+                <span class="icon fa-taxi"></span>
+                <h3>Okehampton Taxis, Airport Transfers, Contract Hire and more</h3>
+            </div>
+
+        </div>
+
+        <footer>
+            <a href="tel:{{ company_contact_num }}" class="button special">Book by Calling: {{ company_contact_num }}</a>
+        </footer>
+        <footer>
+            <span>Or</span>
+            <br/>
+        </footer>
+        <footer>
+            <a href="{{ path('book_step_one') }}" class="button special">Book Online</a>
+        </footer>
+    </div>
+</section>

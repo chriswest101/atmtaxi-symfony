@@ -1,0 +1,29 @@
+<!-- Four -->
+<section id="four" class="wrapper align-center">
+    <div class="inner">
+        <div class="flex">
+            <article>
+                <div class="image round">
+                    <img src="{{ asset('assets/images/pic01.jpg') }}" alt="Okehampton Taxi" title="Okehampton Taxi" />
+                </div>
+                <header>
+                    <h3>What do our customers say</h3>
+                </header>
+                <p>Visit <a href="https://www.yell.com/biz/atm-taxis-okehampton-8962382/" target="_blank">Yell.com</a> to view our reviews and book!</p>
+                <blockquote>"Have used numerous taxi companies and have to say I am very very happy with {{ company }}. They were ontime, clean and perfect. Will be using again!"</blockquote>
+                <blockquote>"What can I say? {{ company }} will now be my only local taxi company I will use."</blockquote>
+                <blockquote>"Recently been using {{ company }} to visit my mum who is in hospital as I have no car. They are a God send and even came to pick me up when I had to get to the hospital on short notice."</blockquote>
+                <footer>
+                    <a href="tel:{{ company_contact_num }}" class="button">Book by Calling: {{ company_contact_num }}</a>
+                </footer>
+                <footer>
+                    <span>Or</span>
+                    <br/>
+                </footer>
+                <footer>
+                    <a href="{{ path('book_step_one') }}" class="button">Book Online</a>
+                </footer>
+            </article>
+        </div>
+    </div>
+</section>

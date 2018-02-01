@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<!-- Three -->
+<section id="three" class="wrapper">
+    <div class="inner">
+        {% for message in app.flashes('warning') %}
+            <div class="box" style="background: #ffb6b6;color: #fff;">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <header class="align-center">
+            <h2>Book a taxi now</h2>
+            <p>Follow the simple steps below to book a Taxi with us</p>
+        </header>
+        <header class="align-left">
+            <h3>4. Check your locations, contact details and time then click submit confirmation</h3>
+        </header>
+        <footer>
+            <div class="align-right">
+                <form method="post" action="{{ path('book_step_five') }}">
+                    <div class="row uniform">
+                        <input type="hidden" value="5" name="stage" />
+                        <input type="hidden" value="{{ id }}" name="id" />
+
+                        <div class="12u$">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td>From:</td>
+                                    <td>{{ from }}</td>
+                                </tr>
+                                <tr>
+                                    <td>To:</td>
+                                    <td>{{ to }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Pickup time:</td>
+                                    <td>{{ pickup_time }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Name:</td>
+                                    <td>{{ name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td>{{ email }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Contact Number:</td>
+                                    <td>{{ contact_number }}</td>
+                                </tr>
+                                <tr>
+                                    <td>No. of people:</td>
+                                    <td>{{ no_of_people }}</td>
+                                </tr>
+                                {#<tr>
+                                    <td>Price:</td>
+                                    <td>&pound;{{ price }}</td>
+                                </tr>#}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="12u$">
+                            <p>Click submit confirmation to send a confirmation request to our Driver. They will then contact you back on the number you provided above to confirm your booking.</p>
+                            <button type="submit" class="button special icon fa-arrow-right">Submit Confirmation</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </footer>
+    </div>
+</section>
+
+{% endblock %}

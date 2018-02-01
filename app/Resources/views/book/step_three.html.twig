@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<script>
+    function validate(form) {
+        var mob = document.getElementById("phone").value;
+        return confirm('You have put ' + mob + ' as your contact number. Is this correct?');
+    }
+</script>
+<!-- Three -->
+<section id="three" class="wrapper">
+    <div class="inner">
+        {% for message in app.flashes('warning') %}
+            <div class="box" style="background: #ffb6b6;color: #fff;">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <header class="align-center">
+            <h2>Book a taxi now</h2>
+            <p>Follow the simple steps below to book a Taxi with us</p>
+        </header>
+        <header class="align-left">
+            <h3>3. Enter your details below. It's important we get your contact number as this is the number our driver will contact you on.</h3>
+        </header>
+        <footer>
+            <div class="align-right">
+                <form method="post" onsubmit="return validate(this);" action="{{ path('book_step_four') }}">
+                    <div class="row uniform">
+                        <input type="hidden" value="4" name="stage" />
+                        <input type="hidden" value="{{ id }}" name="id" />
+
+                        <div class="12u$">
+                            <div class="form-group">
+                                <div class='input-group date' id='datepicker'>
+                                    <input type="text" name="date" value="" id="date_input"  readonly="true"  required placeholder="Pick up date..." />
+                                    <span class="input-group-addon" style="background-color: #fff;border: 1px solid #fff;">
+                                        <span class="icon fa-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="12u$">
+                            <div class="form-group">
+                                <div class='input-group date' id='timepicker'>
+                                    <input type="text" name="time" value="" id="time_input"  readonly="true"  required placeholder="Pick up time..." />
+                                    <span class="input-group-addon" style="background-color: #fff;border: 1px solid #fff;">
+                                        <span class="icon fa-clock-o"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="12u$">
+                            <input type="text" name="name" value="" id="name" required placeholder="Your name..." />
+                        </div>
+
+                        <div class="12u$">
+                            <input type="tel" name="phone" value="" id="phone" required placeholder="Contact Number..." />
+                        </div>
+
+                        <div class="12u$">
+                            <input type="email" name="email" value="" id="email" required placeholder="Email Address..." />
+                        </div>
+
+                        <div class="12u$">
+                            <input type="tel" name="no_of_people" max="20" value="" id="no_of_people" required placeholder="No. of People to pickup..." />
+                        </div>
+
+                        <div class="12u$">
+                            <button type="submit" class="button special icon fa-arrow-right">Next</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </footer>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+        height: 600px;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    #infowindow-content .title {
+        font-weight: bold;
+    }
+
+    #infowindow-content {
+        display: none;
+    }
+
+    #map #infowindow-content {
+        display: inline;
+    }
+</style>
+
+<!-- Three -->
+<section id="three" class="wrapper">
+    <div class="inner">
+        {% for message in app.flashes('warning') %}
+            <div class="box" style="background: #ffb6b6;color: #fff;">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <header class="align-center">
+            <h2>Book a taxi now</h2>
+            <p>Follow the simple steps below to book a Taxi with us</p>
+        </header>
+        <header class="align-left">
+            <h3>2. Select where you would like your drop off location to be then click next below</h3>
+            <p>Use the search box below to type in your drop off location:</p>
+        </header>
+        <input id="pac-input" type="text" placeholder="Start typing your drop off location here">
+        <div id="map"></div>
+        <footer>
+            <p>When you have selected your drop off location click next below.</p>
+            <div class="align-right">
+                <form method="post" action="{{ path('book_step_three') }}">
+                    <input type="hidden" value="3" name="stage" />
+                    <input type="hidden" value="{{ id }}" name="id" />
+                    <input type="hidden" name="to" value="" id="dest" required />
+                    <input type="hidden" name="latlong" value="" id="latlong" required />
+                    <button type="submit" class="button special icon fa-arrow-right">Next</button>
+                </form>
+            </div>
+        </footer>
+    </div>
+</section>
+
+{% endblock %}

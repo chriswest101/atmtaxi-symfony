@@ -1,0 +1,66 @@
+{% include 'emails/email_header.html.twig' %}
+
+<!-- START CENTERED WHITE CONTAINER -->
+<span class="preheader">Booking Confirmation from {{ content.booking_name }}</span>
+<table class="main">
+
+    <!-- START MAIN CONTENT AREA -->
+    <tr>
+        <td class="wrapper">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <p>Hello,</p>
+                        <p>A booking confirmation has come through. The booking details are as follows.</p>
+                        <table border="0" cellpadding="1" cellspacing="1">
+                            <tbody>
+                            <tr>
+                                <td align="left">
+                                    <table border="0" cellpadding="1" cellspacing="1">
+                                        <tbody>
+                                        <tr>
+                                            <th align="right">Name:</th>
+                                            <td>{{ content.booking_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th align="right">Email:</th>
+                                            <td>{{ content.booking_email }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th align="right">Contact No.:</th>
+                                            <td>{{ content.booking_contact_number }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th align="right">No. of People:</th>
+                                            <td>{{ content.booking_pickup_time }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th align="right">From:</th>
+                                            <td>{{ content.booking_from }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th align="right">To:</th>
+                                            <td>{{ content.booking_to }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th align="right">Distance:</th>
+                                            <td>{{ content.booking_distance }}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p>You can contact them via their email or phone number above or reply to this email to get in contact with them.</p>
+                        <p>Regards,<br/>ATM Taxis</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- END MAIN CONTENT AREA -->
+</table>
+
+{% include 'emails/email_footer.html.twig' %}

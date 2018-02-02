@@ -40,3 +40,15 @@ services:
         arguments:
           - "@mailer"
           - "@templating"
+
+    appBundle.bookingHelper:
+        class: AppBundle\Utils\BookingHelper
+        public: true
+        arguments:
+          - "%day_rate%"
+          - "%night_rate%"
+          - "%morning_rate%"
+          - "%afternoon_rate%"
+          - "%evening_rate%"
+          - "%google_maps_matrix_key%"
+          - "@session"

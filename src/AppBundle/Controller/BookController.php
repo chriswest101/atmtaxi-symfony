@@ -53,7 +53,7 @@ class BookController extends Controller
             $this->get('session')->set('booking_from', $request->request->get('from'));
             $this->get('session')->set('booking_from_latlong', $request->request->get('latlong'));
         } else {
-            if (!$request->get('check') || !isset($request->get('check'))) {
+            if (!$request->get('check')) {
                 return $this->redirectToRoute('book_step_one');
             }
         }
@@ -84,7 +84,7 @@ class BookController extends Controller
             $this->get('session')->set('booking_to', $request->request->get('to'));
             $this->get('session')->set('booking_to_latlong', $request->request->get('latlong'));
         } else {
-            if (!$request->get('check') || !isset($request->get('check'))) {
+            if (!$request->get('check')) {
                 return $this->redirectToRoute('book_step_one');
             }
         }
@@ -133,7 +133,7 @@ class BookController extends Controller
             $this->get('session')->set('booking_distance', (isset($journey['rows'][0]['elements'][0]['distance']['text']) ? $journey['rows'][0]['elements'][0]['distance']['text'] : "N/A"));
             $this->get('session')->set('booking_price', $this->getPrice($this->get('session')->get('booking_distance'), $this->get('session')->get('booking_pickup_time')));
         } else {
-            if (!$request->get('check') || !isset($request->get('check'))) {
+            if (!$request->get('check')) {
                 return $this->redirectToRoute('book_step_one');
             }
         }

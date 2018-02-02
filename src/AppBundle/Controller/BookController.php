@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class BookController extends Controller
 {
     /**
-     * @Route("/book/", name="book_step_one", options={"expose"=true})
+     * @Route("/book/stepone", name="book_step_one", options={"expose"=true})
      * @Method("GET")
      */
     public function stepOneAction(Request $request)
@@ -36,7 +36,7 @@ class BookController extends Controller
     }
 
     /**
-     * @Route("/book/", name="book_step_two", options={"expose"=true})
+     * @Route("/book/steptwo", name="book_step_two", options={"expose"=true})
      * @Method({"POST", "GET"})
      */
     public function stepTwoAction(Request $request)
@@ -68,7 +68,7 @@ class BookController extends Controller
     }
 
     /**
-     * @Route("/book/", name="book_step_three", options={"expose"=true})
+     * @Route("/book/stepthree", name="book_step_three", options={"expose"=true})
      * @Method({"POST", "GET"})
      */
     public function stepThreeAction(Request $request)
@@ -101,7 +101,7 @@ class BookController extends Controller
     }
 
     /**
-     * @Route("/book/", name="book_step_four", options={"expose"=true})
+     * @Route("/book/stepfour", name="book_step_four", options={"expose"=true})
      * @Method({"POST", "GET"})
      */
     public function stepFourAction(Request $request)
@@ -157,7 +157,7 @@ class BookController extends Controller
     }
 
     /**
-     * @Route("/book/", name="book_step_five", options={"expose"=true})
+     * @Route("/book/stepfive", name="book_step_five", options={"expose"=true})
      * @Method({"POST", "GET"})
      */
     public function stepFiveAction(Request $request)
